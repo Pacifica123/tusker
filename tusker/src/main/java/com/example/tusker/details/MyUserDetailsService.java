@@ -28,7 +28,7 @@ public class MyUserDetailsService implements UserDetailsService {
         // Создаем объект UserDetails на основе информации о пользователе
         return User.builder()
                 .username(u.email()) // В качестве username используем email
-                .password(u.pass()) // Зашифрованный пароль
+                .password(u.password()) // Зашифрованный пароль
                 .roles("USER") // Роли пользователя (может быть получено из базы данных в будущем)
                 .build();
     }

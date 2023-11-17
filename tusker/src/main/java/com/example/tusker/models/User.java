@@ -3,13 +3,13 @@ package com.example.tusker.models;
 public record User(
     Long id,
     String email,
-    String pass,
+    String password,
     String name
 ) {
     public static class Builder {
         Long id;
         String email;
-        String pass;
+        String password;
         String name;
         public Builder Id(Long id){
             this.id = id;
@@ -20,7 +20,7 @@ public record User(
             return this;
         }
         public Builder Password(String hashedPass){
-            this.pass = hashedPass;
+            this.password = hashedPass;
             return this;
         }
         public Builder Name(String username){
@@ -28,7 +28,7 @@ public record User(
             return this;
         }
         public User build(){
-            return new User(id, email, pass, name);
+            return new User(id, email, password, name);
         }
     }
 }

@@ -4,7 +4,9 @@ import com.example.tusker.dto.UserRegistrationDto;
 import com.example.tusker.models.User;
 import com.example.tusker.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;

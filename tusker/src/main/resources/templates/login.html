@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 </head>
 <style>
     body {
@@ -33,7 +34,7 @@ input {
 }
 
 button {
-    background-color: #4caf50; /* Цвет фона кнопки */
+    background-color: #49aff0; /* Цвет фона кнопки */
     color: #fff; /* Цвет текста кнопки */
     padding: 10px 15px; /* Внутренний отступ кнопки */
     border: none; /* Убрать границу кнопки */
@@ -47,14 +48,13 @@ button:hover {
 
 </style>
 <body>
-<h2>Регистрация</h2>
-<!-- registration.html -->
-<form th:action="@{/reg}" th:object="${user}" method="post">
-    <label>Имя: <input type="text" th:field="*{username}"/> </label>
-    <label>Email: <input type="text" th:field="*{email}" /></label><br/>
-    <label>Пароль: <input type="password" th:field="*{password}" /></label><br/>
-    <!-- Другие поля, если необходимо -->
-    <button type="submit">Зарегистрироваться</button>
+<h2>Вход в аккаунт</h2>
+<form th:action="@{/login}" th:object="${user}" method="post">
+    <label th:for="username">Email:</label>
+    <input type="text" id="email" name="email" th:field="*{email}" required="required">
+    <label th:for="password">Пароль:</label>
+    <input type="password" id="password" name="password" th:field="*{password}" required="required">
+  <button type="submit">Войти</button>
 </form>
 
 </body>
